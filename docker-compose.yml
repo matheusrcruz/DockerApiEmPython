@@ -1,4 +1,12 @@
-version: '3'
+version:  '3'
+volumes:
+  dataVolume:
 services:
   db:
-    image: postgres:9.6
+    image:  postgres:9.6
+    volumes:
+    #volume dos dados
+    - dataVolume:/var/lib/postgresql/data
+    # Scripts
+    - ./scripts:/scripts
+    - ./scripts/init.sql:/docker-entrypoint-initdb.d/init.sql
