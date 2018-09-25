@@ -1,12 +1,39 @@
 version:  '3'
 volumes:
-  dataVolume:
+  data:
+networks: 
+  banco:
+  web:
 services:
   db:
     image:  postgres:9.6
     volumes:
-    #volume dos dados
-    - dataVolume:/var/lib/postgresql/data
-    # Scripts
+
+    - data:/var/lib/postgresql/data
+    
     - ./scripts:/scripts
     - ./scripts/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+    - banco
+  frontend:
+    image: nginx:1.13
+    volumes:
+      - ./web:/usr/share/nginx/html/
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - 80:80
+    networks: 
+      - web
+    depends_on:
+      - app
+  app:  
+    image: python:3.6
+    volumes:
+      - ./app:/app
+    working_dir: /app
+    command: bash ./app.sh
+    networks: 
+      - banco
+      - web
+    depends_on:
+      - db
