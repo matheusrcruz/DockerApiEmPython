@@ -6,7 +6,7 @@ Passos para conseguir buildar os scripts
 
 2.Buildar as dependencias via composer, docker-compose up -d.
 
-3.Acessar o localhost e ver a magica.
+3.Caso de error de alguma imagem não buildar ou não buildar, é falha no acesso ao dockerhub é só criar uma conta(https://hub.docker.com/) e logar(docker login).  
 
 
 
