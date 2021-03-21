@@ -1,8 +1,7 @@
  #Api python mais Backend docker
 
 
-<b>Usando Docker para fazer os contêiner dos serviços,do backend e front-end
-Bootstrap.
+<b>Usando Docker para subir os contêiners das dependências de backend(escrito em python) e front-end feito em(framework Bootstrap).
 
  Passos para conseguir buildar os scripts.</b>
 
