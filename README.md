@@ -12,5 +12,8 @@ Bootstrap.
 
 3.Caso de error de alguma imagem não buildar ou não buildar, é falha no acesso ao dockerhub é só criar uma conta(https://hub.docker.com/) e logar(docker login).
 
+![image](https://user-images.githubusercontent.com/31409846/111911175-28fc5700-8a43-11eb-9def-d530362750d5.png)
+
+
 
 
